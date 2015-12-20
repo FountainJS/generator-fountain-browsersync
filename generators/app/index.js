@@ -51,8 +51,8 @@ module.exports = fountain.Base.extend({
 
   writing: function () {
     this.fs.copyTpl(
-      this.templatePath('gulp_tasks/browserSync.js'),
-      this.destinationPath('gulp_tasks/browserSync.js')
+      this.templatePath('gulp_tasks/browsersync.js'),
+      this.destinationPath('gulp_tasks/browsersync.js')
     );
   }
 });
