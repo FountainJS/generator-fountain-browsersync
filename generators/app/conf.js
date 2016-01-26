@@ -27,6 +27,21 @@ module.exports = function browsersyncConf(props) {
       };
       conf.server.index = 'src/index.html';
     }
+    if (props.webpackHotReload) {
+      conf.server.middleware = [
+        lit`webpackDevMiddleware(webpackBundler, {
+        // IMPORTANT: dev middleware can't access config, so we should
+        // provide publicPath by ourselves
+        publicPath: webpackConf.output.publicPath,
+
+        // Quiet verbose output in console
+        quiet: true
+      }),
+
+      // bundler should be the same as above
+      webpackHotMiddleware(webpackBundler)`
+      ];
+    }
   }
 
   return conf;
