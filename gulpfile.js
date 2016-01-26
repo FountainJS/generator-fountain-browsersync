@@ -27,7 +27,7 @@ function eslintCheck() {
 function istanbulCover() {
   return gulp.src(['**/*.js', '!**/templates/**'])
     .pipe(excludeGitignore())
-    .pipe(istanbul({ includeUntested: true }))
+    .pipe(istanbul({includeUntested: true}))
     .pipe(istanbul.hookRequire());
 }
 

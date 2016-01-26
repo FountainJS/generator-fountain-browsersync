@@ -42,5 +42,11 @@
     "test": "gulp",
     "prepublish": "gulp prepublish"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "eslintConfig": {
+    "extends": "xo-space/esnext",
+    "env": {
+      "mocha": true
+    }
+  }
 }

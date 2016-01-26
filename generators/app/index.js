@@ -3,13 +3,13 @@ const fountain = require('fountain-generator');
 const conf = require('./conf');
 
 module.exports = fountain.Base.extend({
-  prompting: function () {
+  prompting() {
     this.fountainPrompting();
   },
 
   configuring: {
-    package: function () {
-      var pkg = {
+    package() {
+      const pkg = {
         devDependencies: {
           'browser-sync': '^2.9.11'
         }
@@ -27,7 +27,7 @@ module.exports = fountain.Base.extend({
       this.mergeJson('package.json', pkg);
     },
 
-    conf: function () {
+    conf() {
       const props = Object.assign({
         dist: false,
         webpackHotReload: this.props.framework === 'react' && this.props.modules === 'webpack'
@@ -44,7 +44,7 @@ module.exports = fountain.Base.extend({
     }
   },
 
-  writing: function () {
+  writing() {
     this.fs.copyTpl(
       this.templatePath('gulp_tasks/browsersync.js'),
       this.destinationPath('gulp_tasks/browsersync.js')
