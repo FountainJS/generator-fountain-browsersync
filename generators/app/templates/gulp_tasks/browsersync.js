@@ -13,7 +13,8 @@ gulp.task('browsersync:dist', browserSyncDist);
 
 function browserSyncServe(done) {
   browserSync.init(browserSyncConf());
-  gulp.watch(path.join(conf.paths.src, '/app/**/*.html'), browserSync.reload);
+  gulp.watch(path.join(conf.paths.src, '**/*.<%- extensions.js %>'), browserSync.reload);
+  gulp.watch(path.join(conf.paths.src, '**/*.html'), browserSync.reload);
   done();
 }
 
