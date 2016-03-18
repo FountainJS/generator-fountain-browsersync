@@ -9,6 +9,6 @@ const webpackConf = require('./webpack.conf');
 const webpackBundler = webpack(webpackConf);
 <% } -%>
 
-module.exports = function() {
+module.exports = function () {
   return <%- json(browsersyncConf, 2) %>;
 };
