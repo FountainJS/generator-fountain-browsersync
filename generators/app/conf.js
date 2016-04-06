@@ -3,9 +3,9 @@ const lit = require('fountain-generator').lit;
 module.exports = function browsersyncConf(props) {
   const conf = {
     server: {
-      baseDir: [],
-      browser: []
-    }
+      baseDir: []
+    },
+    open: false
   };
 
   if (props.dist) {
