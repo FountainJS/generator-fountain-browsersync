@@ -5,7 +5,8 @@ module.exports = function browsersyncConf(props) {
     server: {
       baseDir: [],
       browser: []
-    }
+    },
+    open: false
   };
 
   if (props.dist) {
