@@ -20,8 +20,7 @@
     "cli"
   ],
   "dependencies": {
-    "fountain-generator": "^0.4.0",
-    "lodash": "^4.10.0"
+    "fountain-generator": "^0.4.0"
   },
   "devDependencies": {
     "babel-eslint": "^6.0.2",
