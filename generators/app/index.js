@@ -1,4 +1,3 @@
-const _ = require('lodash');
 const fountain = require('fountain-generator');
 const conf = require('./conf');
 
@@ -14,15 +13,6 @@ module.exports = fountain.Base.extend({
           'browser-sync': '^2.9.11'
         }
       };
-
-      if (this.props.dependencyManagement === 'commonjs' && this.props.framework === 'react') {
-        _.merge(pkg, {
-          devDependencies: {
-            'webpack-dev-middleware': '^1.4.0',
-            'webpack-hot-middleware': '^2.6.0'
-          }
-        });
-      }
 
       this.mergeJson('package.json', pkg);
     },
