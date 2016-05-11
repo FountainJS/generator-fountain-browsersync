@@ -2,10 +2,6 @@ const fountain = require('fountain-generator');
 const conf = require('./conf');
 
 module.exports = fountain.Base.extend({
-  prompting() {
-    this.fountainPrompting();
-  },
-
   configuring: {
     package() {
       const pkg = {
@@ -18,19 +14,18 @@ module.exports = fountain.Base.extend({
     },
 
     conf() {
-      const props = Object.assign({
+      const templateVars = Object.assign({
         dist: false,
-        webpackHotReload: this.props.framework === 'react' && this.props.modules === 'webpack'
-      }, this.props);
+        webpackHotReload: this.options.framework === 'react' && this.options.modules === 'webpack'
+      }, this.options);
 
-      props.browsersyncConf = conf(props);
+      templateVars.browsersyncConf = conf(templateVars);
+      this.copyTemplate('conf/browsersync.conf.js', 'conf/browsersync.conf.js', templateVars);
 
-      this.copyTemplate('conf/browsersync.conf.js', 'conf/browsersync.conf.js', props);
+      templateVars.dist = true;
+      templateVars.browsersyncConf = conf(templateVars);
 
-      props.dist = true;
-      props.browsersyncConf = conf(props);
-
-      this.copyTemplate('conf/browsersync.conf.js', 'conf/browsersync-dist.conf.js', props);
+      this.copyTemplate('conf/browsersync.conf.js', 'conf/browsersync-dist.conf.js', templateVars);
     }
   },
 
@@ -38,7 +33,7 @@ module.exports = fountain.Base.extend({
     this.copyTemplate(
       'gulp_tasks/browsersync.js',
       'gulp_tasks/browsersync.js',
-      conf(this.props)
+      conf(this.options)
     );
   }
 });
