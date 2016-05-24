@@ -1,3 +1,15 @@
+<p align="center">
+  <a href="http://fountainjs.io/">
+    <img alt="FountainJS" src="http://fountainjs.io/assets/imgs/fountain.png" width="200">
+  </a>
+</p>
+
+<p align="center">
+  <a href="http://fountainjs.io/">
+    http://fountainjs.io/
+  </a>
+</p>
+
 # Fountain BrowserSync Generator
 
 Yeoman 'fountain' generator which handle the BrowserSync config.
@@ -9,5 +21,3 @@ This generator is not directly usable with `yo`. It's used by composition with t
 ## Contributing
 
 To contribute to this generator, please look at the Fountain [contributing](https://github.com/FountainJS/fountain/blob/master/CONTRIBUTING.md) documentation.
-
-<div style="text-align: center;"><img src="http://fountainjs.io/assets/imgs/fountain.png" /></div>
