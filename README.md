@@ -4,12 +4,6 @@
   </a>
 </p>
 
-<p align="center">
-  <a href="http://fountainjs.io/">
-    http://fountainjs.io/
-  </a>
-</p>
-
 # Fountain BrowserSync Generator
 
 Yeoman 'fountain' generator which handle the BrowserSync config.
