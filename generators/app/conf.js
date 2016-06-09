@@ -23,10 +23,11 @@ module.exports = function browsersyncConf(templateVars) {
       };
     }
     if (templateVars.modules === 'systemjs') {
+      const index = templateVars.sample === 'jhipster' ? 'src/main/webapp/index.html' : 'src/index.html';
       conf.server.routes = {
-        '/index.html': 'src/index.html'
+        '/index.html': index
       };
-      conf.server.index = 'src/index.html';
+      conf.server.index = index;
     }
     if (templateVars.webpackHotReload) {
       conf.server.middleware = [
