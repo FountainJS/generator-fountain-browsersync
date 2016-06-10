@@ -6,11 +6,12 @@ module.exports = fountain.Base.extend({
     package() {
       const pkg = {
         devDependencies: {
-          'browser-sync': '^2.9.11',
-          'browser-sync-spa': '^1.0.3'
+          'browser-sync': '^2.9.11'
         }
       };
-
+      if (this.options.router !== 'none') {
+        pkg.devDependencies['browser-sync-spa'] = '^1.0.3';
+      }
       this.mergeJson('package.json', pkg);
     },
 
@@ -34,7 +35,7 @@ module.exports = fountain.Base.extend({
     this.copyTemplate(
       'gulp_tasks/browsersync.js',
       'gulp_tasks/browsersync.js',
-      conf(this.options)
+      Object.assign(conf(this.options), {router: this.options.router})
     );
   }
 });
