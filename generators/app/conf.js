@@ -12,11 +12,7 @@ module.exports = function browsersyncConf(templateVars) {
     conf.server.baseDir.push(lit`conf.paths.dist`);
   } else {
     conf.server.baseDir.push(lit`conf.paths.tmp`);
-    if (templateVars.modules === 'systemjs') {
-      conf.server.baseDir.push('.');
-    } else {
-      conf.server.baseDir.push(lit`conf.paths.src`);
-    }
+    conf.server.baseDir.push(lit`conf.paths.src`);
     if (templateVars.modules === 'inject') {
       conf.server.routes = {
         '/bower_components': 'bower_components'
@@ -24,9 +20,11 @@ module.exports = function browsersyncConf(templateVars) {
     }
     if (templateVars.modules === 'systemjs') {
       conf.server.routes = {
-        '/index.html': 'src/index.html'
+        '/jspm_packages': 'jspm_packages',
+        '/jspm.config.js': 'jspm.config.js',
+        '/jspm.browser.js': 'jspm.browser.js',
+        '/src': 'src'
       };
-      conf.server.index = 'src/index.html';
     }
     if (templateVars.webpackHotReload) {
       conf.server.middleware = [
