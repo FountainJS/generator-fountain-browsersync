@@ -14,6 +14,9 @@ module.exports = function browsersyncConf(templateVars) {
     conf.server.baseDir.push(lit`conf.paths.tmp`);
     if (templateVars.modules === 'systemjs') {
       conf.server.baseDir.push('.');
+      if (templateVars.sample === 'jhipster') {
+        conf.server.baseDir.push(lit`conf.paths.src`);
+      }
     } else {
       conf.server.baseDir.push(lit`conf.paths.src`);
     }
