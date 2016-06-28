@@ -4,6 +4,9 @@
   </a>
 </p>
 
+[![Build Status](https://travis-ci.org/FountainJS/generator-fountain-browsersync.svg?branch=master)](https://travis-ci.org/FountainJS/generator-fountain-browsersync)
+[![codecov](https://codecov.io/gh/FountainJS/generator-fountain-browsersync/branch/master/graph/badge.svg)](https://codecov.io/gh/FountainJS/generator-fountain-browsersync)
+
 # Fountain BrowserSync Generator
 
 Yeoman 'fountain' generator which handle the BrowserSync config.
