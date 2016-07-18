@@ -12,7 +12,11 @@ module.exports = function browsersyncConf(templateVars) {
     conf.server.baseDir.push(lit`conf.paths.dist`);
   } else {
     conf.server.baseDir.push(lit`conf.paths.tmp`);
-    conf.server.baseDir.push(lit`conf.paths.src`);
+    if (templateVars.modules === 'systemjs') {
+      conf.server.baseDir.unshift(lit`conf.paths.src`);
+    } else {
+      conf.server.baseDir.push(lit`conf.paths.src`);
+    }
     if (templateVars.modules === 'inject') {
       conf.server.routes = {
         '/bower_components': 'bower_components'
