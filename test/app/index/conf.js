@@ -37,7 +37,7 @@ test(`browsersyncConf when modules is 'systemjs'`, t => {
   const templateVars = {modules: 'systemjs'};
   const expected = {
     server: {
-      baseDir: ['lit>>conf.paths.tmp<<lit', 'lit>>conf.paths.src<<lit'],
+      baseDir: ['lit>>conf.paths.src<<lit', 'lit>>conf.paths.tmp<<lit'],
       routes: {
         '/jspm_packages': 'jspm_packages',
         '/jspm.config.js': 'jspm.config.js',
