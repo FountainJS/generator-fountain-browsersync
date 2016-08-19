@@ -1,8 +1,8 @@
 {
   "name": "generator-fountain-browsersync",
   "version": "0.6.0",
-  "description": "Yeoman 'fountain' generator which handle the BrowserSync config",
-  "homepage": "",
+  "description": "Yeoman Fountain generator which handle the BrowserSync config",
+  "homepage": "http://fountainjs.io/",
   "repository": "fountainjs/generator-fountain-browsersync",
   "author": "The Fountain Team",
   "contributors": [

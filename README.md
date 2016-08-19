@@ -9,7 +9,7 @@
 
 # Fountain BrowserSync Generator
 
-Yeoman 'fountain' generator which handle the BrowserSync config.
+Yeoman Fountain generator which handle the BrowserSync config.
 
 ## Usage
 
